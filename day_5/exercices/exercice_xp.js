@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/collegeDB')
     console.error('❌ Connection Failed:', err);
   });
 
-//==================> exercice 1
+//==================> exercice 2
 
 const mongoose = require('mongoose');
 
@@ -56,3 +56,4 @@ const testStudent = async () => {
 };
 
 testStudent();
+
