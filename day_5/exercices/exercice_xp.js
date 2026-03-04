@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 //==================> exercice 1
 
 const mongoose = require('mongoose');
@@ -57,3 +59,129 @@ const testStudent = async () => {
 
 testStudent();
 
+=======
+=======
+>>>>>>> 98677ed (fix conflicts)
+//==================> exercice 1
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/collegeDB')
+  .then(() => {
+    console.log('✅ Connection Successful! Node.js is talking to MongoDB.');
+  })
+  .catch((err) => {
+    console.error('❌ Connection Failed:', err);
+  });
+
+//==================> exercice 2
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/collegeDB')
+  .then(() => {
+    console.log('✅ Connection Successful! Node.js is talking to MongoDB.');
+  })
+  .catch((err) => {
+    console.error('❌ Connection Failed:', err);
+  });
+
+const studentSchema = new mongoose.Schema({
+  name: { 
+    type: String, 
+    required: [true, 'Name is mandatory'] 
+  },
+  email: { 
+    type: String, 
+    required: true, 
+    unique: true 
+  },
+  age: { 
+    type: Number, 
+    min: [18, 'Students must be at least 18 years old'] 
+  }
+});
+
+const Student = mongoose.model('Student', studentSchema);
+
+const testStudent = async () => {
+  try {
+    const student = new Student({
+      name: "Omar",
+      email: "omar@school.com",
+      age: 16
+    });
+    await student.save();
+  } catch (error) {
+    console.log("Validation Error Caught:", error.message);
+  } finally {
+    mongoose.connection.close();
+  }
+};
+
+testStudent()
+<<<<<<< HEAD
+>>>>>>> f34934d (Resolve merge conflicts)
+=======
+=======
+//==================> exercice 1
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/collegeDB')
+  .then(() => {
+    console.log('✅ Connection Successful! Node.js is talking to MongoDB.');
+  })
+  .catch((err) => {
+    console.error('❌ Connection Failed:', err);
+  });
+
+//==================> exercice 2
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/collegeDB')
+  .then(() => {
+    console.log('✅ Connection Successful! Node.js is talking to MongoDB.');
+  })
+  .catch((err) => {
+    console.error('❌ Connection Failed:', err);
+  });
+
+const studentSchema = new mongoose.Schema({
+  name: { 
+    type: String, 
+    required: [true, 'Name is mandatory'] 
+  },
+  email: { 
+    type: String, 
+    required: true, 
+    unique: true 
+  },
+  age: { 
+    type: Number, 
+    min: [18, 'Students must be at least 18 years old'] 
+  }
+});
+
+const Student = mongoose.model('Student', studentSchema);
+
+const testStudent = async () => {
+  try {
+    const student = new Student({
+      name: "Omar",
+      email: "omar@school.com",
+      age: 16
+    });
+    await student.save();
+  } catch (error) {
+    console.log("Validation Error Caught:", error.message);
+  } finally {
+    mongoose.connection.close();
+  }
+};
+
+testStudent();
+
+>>>>>>> origin/main
+>>>>>>> 98677ed (fix conflicts)
